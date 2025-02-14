@@ -1,0 +1,53 @@
+.home{
+    position: absolute;
+    margin-top: 140px;
+  height: 700px; 
+  min-width: 440px;
+   
+}
+.signin{
+   width: 300px;
+   margin-top: 40px;
+   
+}
+footer{
+    height: 90vh;
+    padding-top: 200px;
+    
+}
+.logo{
+    margin-top: 20px;
+    margin-left: 120px;
+    color: rgb(180, 4, 4);
+    font-size: 45px;
+    z-index: 2;
+
+}
+.logo:hover{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+
+
+}
+.blur{
+    height: 800px;
+    
+}
+.ion{
+    font-size: 30px;
+    margin-top: 10px;
+ 
+  
+}
+.left{
+    position: fixed;
+   
+   justify-content: center;
+    background-color: rgb(21, 30, 35);
+    padding-left: 10px;
+    
+
+}
+
+
+ 

@@ -1,0 +1,90 @@
+/* General container styling */
+
+  .mp{
+    margin-left: 50px;
+    margin-top: 20px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    background-color: rgb(21, 30, 35);
+   
+
+  
+
+}/* Main container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Grid container for movies */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Default: 5 columns */
+  gap: 16px; /* Space between grid items */
+}
+
+/* Movie card styles */
+.grid > .rounded-lg {
+  background-color: #1a1a1a; /* Slightly different black for contrast */
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect for movie cards */
+.grid > .rounded-lg:hover {
+  transform: scale(1.05); /* Zoom out effect */
+}
+
+/* Image styles */
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Text styles */
+p {
+  color: white;
+  margin-top: 8px;
+  font-size: 14px;
+ 
+}
+
+/* Media queries for responsiveness */
+
+/* For small screens (less than 640px) */
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* 2 columns */
+  }
+}
+@media(min-width: 400px) and (   max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+/* For medium screens (641px to 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+}
+
+/* For large screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  }
+}
+
+/* For extra-large screens (1025px and above) */
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  }
+}
