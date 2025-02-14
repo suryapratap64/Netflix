@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import "./BannerHome.css";
 const Footer = () => {
   return (
-    <footer className="footer relative  text-gray-400 mt-0">
+    <footer className="foot   relative text-gray-400 mt-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
+        {/* Logo */} 
         {/* <div className="mb-6 text-center text-white text-xl font-bold">Setflix</div> */}
 
         {/* Links */}
