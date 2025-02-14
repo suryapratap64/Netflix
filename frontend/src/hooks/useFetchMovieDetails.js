@@ -12,7 +12,7 @@ const useFetchMovieDetails = (title) => {
 
       try {
         setError(null); // Clear previous errors
-        const response = await axios.get("http://localhost:8000/api/movie", {
+        const response = await axios.get("https://netflix-sk1e.onrender.com/api/movie", {
           params: { title }, // Pass the movie title as a query parameter
         });
         setMovie(response.data); // Save movie details in state

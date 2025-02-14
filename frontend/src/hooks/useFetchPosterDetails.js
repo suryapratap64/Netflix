@@ -15,7 +15,7 @@ const useFetchPosterDetails = (title) => {
         setError(null); // Clear previous errors
         setLoading(true); // Set loading to true
 
-        const response = await axios.get("http://localhost:8000/api/poster/title/:movieTitle", {
+        const response = await axios.get("https://netflix-sk1e.onrender.com/api/poster/title/:movieTitle", {
           params: { title }, // Pass the movie title as a query parameter
         });
 

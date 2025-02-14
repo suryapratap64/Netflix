@@ -25,7 +25,7 @@ const Signup = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:8000/api/v1/user/signup",
+        "https://netflix-sk1e.onrender.com/api/v1/user/signup",
         input,
         {
           headers: {

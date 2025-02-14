@@ -11,7 +11,7 @@ const useGetAllMovies = () => {
         const fetchAllMovies = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:8000/api/v1/movie/all",
+                    "https://netflix-sk1e.onrender.com/api/v1/movie/all",
                     { withCredentials: true }
                 );
                
