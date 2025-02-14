@@ -15,7 +15,7 @@ const MovieDetails = () => {
   const fetchMovieDetails = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:8000/api/movie`, {
+      const response = await axios.get(`https://netflix-sk1e.onrender.com/api/movie`, {
         params: { title },
       });
       console.log("Fetched movie data:", response.data);

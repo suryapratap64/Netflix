@@ -52,7 +52,7 @@ const AddMovie = () => {
     
       try {
         setLoading(true);
-        const response = await axios.post('http://localhost:8000/api/v1/movie/addmovie', formData, {
+        const response = await axios.post('https://netflix-sk1e.onrender.com/api/v1/movie/addmovie', formData, {
           headers: {
             'Content-Type': 'multipart/form-data', // Required for file uploads
           },
