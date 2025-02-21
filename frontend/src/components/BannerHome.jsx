@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useGetAllMovies from "../hooks/useGetAllMovies.js";
+import "./BannerHome.css";
 
 const BannerHome = () => {
   const movies = useSelector((state) => state.movie.movies); // Access movies from Redux
