@@ -66,7 +66,7 @@ const BannerHome = () => {
           <img
             src={movie.Poster}
             alt={movie.Title}
-            className="shadow-lg ipage  w-full h-full"
+            className="shadow-lg ipage "
           />
 
           {/* Navigation Buttons (Left & Right) */}
