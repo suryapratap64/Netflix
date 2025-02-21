@@ -8,6 +8,13 @@ height: 60vh;
 
 
 }
+@media (max-width: 768px) {
+.mpage{
+    height: 60vh;
+    margin-left: 0px;
+}
+   
+}
 .backg{
     background-color: rgb(21, 30, 35);
 }
