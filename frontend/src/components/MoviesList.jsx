@@ -14,7 +14,7 @@ const MoviesList = () => {
 
 
   return (
-    <div className="mp bg-black container mx-auto px-4 my-2 ">
+    <div className="mp bg-black mx-auto px-4 my-2 ">
       <h2 className="text-2xl font-bold text-white mt-2 ">All Movies</h2>
 
       <div
