@@ -68,11 +68,17 @@ p {
   .mp{
     margin-left: 0px;
   }
+   .mp{
+    margin-left: 0px;
+  }
 }
 @media(min-width: 400px) and (   max-width: 640px) {
   .grid {
     grid-template-columns: repeat(2, 1fr); 
   
+  }
+   .mp{
+    margin-left: 0px;
   }
 }
 /* For medium screens (641px to 768px) */
