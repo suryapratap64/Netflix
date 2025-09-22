@@ -2,36 +2,34 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import { API_URL } from "../config";
 import { setMovies } from "../redux/movieSlice.js"; // Adjust the path if needed
 
 const useGetAllMovies = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        const fetchAllMovies = async () => {
-            try {
-                const res = await axios.get(
-                    "https://netflix-sk1e.onrender.com/api/v1/movie/all",
-                    { withCredentials: true }
-                );
-               
+  useEffect(() => {
+    const fetchAllMovies = async () => {
+      try {
+        const res = await axios.get(`${API_URL}/api/v1/movie/all`, {
+          withCredentials: true,
+        });
 
-                if (res.data.success) {
-                    dispatch(setMovies(res.data.movies));
-                } else {
-                    console.error("Failed to fetch movies:", res.data.message);
-                }
-            } catch (error) {
-                console.error("Error fetching movies:", error.message);
-            }
-        };
+        if (res.data.success) {
+          dispatch(setMovies(res.data.movies));
+        } else {
+          console.error("Failed to fetch movies:", res.data.message);
+        }
+      } catch (error) {
+        console.error("Error fetching movies:", error.message);
+      }
+    };
 
-        fetchAllMovies();
-    }, [dispatch]);
+    fetchAllMovies();
+  }, [dispatch]);
 };
 
 export default useGetAllMovies; // Ensure this default export is present
-
 
 // import { setMovies } from "../redux/movieSlice1"; // Assuming you have a movieSlice similar to postSlice
 // import axios from "axios";
@@ -45,7 +43,7 @@ export default useGetAllMovies; // Ensure this default export is present
 //         const fetchAllMovies = async () => {
 //             try {
 //                 const res = await axios.get('http://localhost:8000/api/v1/movie/all', { withCredentials: true });
-                
+
 //                 if (res.data.success) {
 //                     // Dispatch the movie data to the Redux store
 //                     dispatch(setMovies(res.data.movie));
@@ -61,7 +59,6 @@ export default useGetAllMovies; // Ensure this default export is present
 // };
 
 // export default useGetAllMovies;
-
 
 // // import { useState, useEffect } from 'react';
 
@@ -107,5 +104,3 @@ export default useGetAllMovies; // Ensure this default export is present
 // // };
 
 // // export default useGetAllMovie;
-
-

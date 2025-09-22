@@ -1,9 +1,10 @@
 import { User } from "../models/user.model.js";
 
+
 import { Movie } from "../models/movie.model.js";
 
 import axios from "axios";
-// const cloudinary = require("cloudinary").v2;
+//const cloudinary = require("cloudinary").v2;
 //import cloudinary from "cloudinary";
 import { v2 as cloudinary } from "cloudinary";
 

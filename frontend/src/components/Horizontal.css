@@ -47,6 +47,7 @@ img {
   object-fit: cover;
 }
 
+
 /* Text styles */
 p {
   color: white;
@@ -60,12 +61,18 @@ p {
 /* For small screens (less than 640px) */
 @media (max-width: 400px) {
   .grid {
-    grid-template-columns: repeat(1, 1fr); /* 2 columns */
+    grid-template-columns: repeat(1, 1fr);
+  
+   
+  }
+  .mp{
+    margin-left: 0px;
   }
 }
 @media(min-width: 400px) and (   max-width: 640px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(2, 1fr); 
+  
   }
 }
 /* For medium screens (641px to 768px) */

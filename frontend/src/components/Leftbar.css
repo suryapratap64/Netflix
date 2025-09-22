@@ -1,115 +1,60 @@
+/* 
 .left {
-    position: fixed;
-    
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 50px; /* Default width */
-   
-    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out; /* Smooth transition */
-  }
-  
-  .left.open {
-    transform: translateX(0); /* Slide in from the left */
-  }
-  
-  .left .toggle-button {
-    display: none; /* Hide by default for larger screens */
-  }
-  
-  .left .menu-items {
-    padding: 16px;
-  }
-  
-  .left .sidebar-item {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 50px;
+  background-color: rgb(21, 30, 35);
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sidebar-item:hover {
+  color: red;
+}
+
+.ion {
+  font-size: 24px;
+}
+
+
+@media (max-width: 768px) {
+  .left {
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    padding: 12px;
-    cursor: pointer;
-    color: white;
-    transition: background-color 0.3s ease-in-out;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    z-index: 1000;
   }
-  
-  .left .toggle-button {
-    display: block; /* Make it visible */
-    position: fixed; /* Fix it in the viewport */
-    top: 16px; /* Distance from the top of the screen */
-    right: 16px; /* Distance from the right of the screen */
-    z-index: 1100; /* Ensure it's above other content */
-    cursor: pointer; /* Show pointer cursor on hover */
+
+  .sidebar-item {
+    margin: 0;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  
-  .left .toggle-button .line {
-    height: 3px; /* Thickness of each line */
-    width: 30px; /* Width of each line */
-    background-color: white; /* Line color */
-    margin-bottom: 5px; /* Space between lines */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+
+  .ion {
+    font-size: 20px;
   }
-  
-  
-  
-  .left.open .toggle-button .line:nth-child(2) {
-    opacity: 100; /* Hide middle line */
-  }
-  
-  .left.open .toggle-button .line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg); /* Transform third line into an 'X' */
-  }
-  
-  
-  .left .sidebar-item svg {
-    margin-right: 12px;
-  }
-  
-  /* Media query for smaller screens */
-  @media (max-width: 768px) {
-    .left {
-      transform: translateX(-100%); /* Initially hide off-screen */
-      width: 80%; /* Adjusted width for smaller screens */
-      z-index: 1000; /* Ensure it's above other content */
-    }
-  
-    .left.open {
-      transform: translateX(0); /* Slide in when open */
-    }
-  
-    .left .toggle-button {
-      display: block; /* Show toggle button */
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      cursor: pointer;
-      z-index: 1100; /* Ensure it's above other content */
-    }
-  
-    .left .toggle-button .line {
-      height: 2px;
-      width: 24px;
-      background-color: white;
-      margin-bottom: 4px;
-      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    }
-  
-    .left.open .toggle-button .line:nth-child(1) {
-      transform: translateY(6px) rotate(45deg);
-    }
-  
-    .left.open .toggle-button .line:nth-child(2) {
-      opacity: 0; /* Hide middle line when open */
-    }
-  
-    .left.open .toggle-button .line:nth-child(3) {
-      transform: translateY(-6px) rotate(-45deg);
-    }
-  
-    .left .menu-items {
-      padding-top: 64px; /* Space for toggle button */
-    }
-  
-    .left .sidebar-item {
-      padding: 12px 24px;
-      font-size: 18px; /* Larger font size for better touch usability */
-    }
-  }
-  
+} */

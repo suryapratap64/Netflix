@@ -5,6 +5,6 @@ import authReducer from "./authSlice"; // Import reducer, not slice
 export const store = configureStore({
   reducer: {
     movie: movieReducer, 
-    auth: authReducer,// Use the correct slice name (e.g., 'movie' if that's the slice name)
+    auth: authReducer,
   },
 })

@@ -1,5 +1,5 @@
 import express from "express";
-import { urlencoded } from "express"
+import { urlencoded } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import connectDB from "./utils/mdb.js";
@@ -14,15 +14,11 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 
-
-
-
 const app = express();
 
 // netstat -ano | findstr :5000
-const PORT=process.env.PORT || 8000;
-const __dirname=path.resolve();
-
+const PORT = process.env.PORT || 8000;
+const __dirname = path.resolve();
 
 // app.get("/",(req,res)=>{
 //     return res.status(200).json({
@@ -31,16 +27,18 @@ const __dirname=path.resolve();
 //     })
 // })
 // middlewares
-app.use(express.json())
+app.use(express.json());
 app.use(cookieParser());
 
-
-app.use(urlencoded({extended:true}))
-const corsOptions={
-    origin:process.env.URL,
-    credentials:true
-}
-app.use(cors(corsOptions))
+app.use(urlencoded({ extended: true }));
+const corsOptions = {
+  origin: ["http://localhost:5173", "https://netflix-sk1e.onrender.com"],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  exposedHeaders: ["set-cookie"],
+};
+app.use(cors(corsOptions));
 // OMDB API Request
 app.get("/api/movie", async (req, res) => {
   const OMDB_API_KEY = process.env.OMDB_API_KEY;
@@ -48,7 +46,6 @@ app.get("/api/movie", async (req, res) => {
   const url = `https://www.omdbapi.com/?t=${title}&apikey=${OMDB_API_KEY}`;
 
   try {
-  
     const response = await axios.get(url); // Fetch from OMDB API
     res.status(200).json(response.data); // Send data to frontend
   } catch (error) {
@@ -57,21 +54,17 @@ app.get("/api/movie", async (req, res) => {
   }
 });
 
-
 // API Routes
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/movie", movieRoute);
 app.use("/api/v1/video", videoRoute);
 
-
-app.use(express.static(path.join(__dirname,"/frontend/dist")));
-app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"))
-})
-
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+});
 
 // Start the server
-
 
 app.listen(PORT, () => {
   connectDB();
@@ -125,9 +118,8 @@ app.listen(PORT, () => {
 // });
 
 // //  app.use(urlencoded({extended:true}))
- 
-//  app.use(express.json()); 
 
+//  app.use(express.json());
 
 // app.use(cors({
 //   origin: "http://localhost:5173", // Set your frontend origin explicitly

@@ -1,19 +1,24 @@
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ProtectedRoutes = ({ children }) => {
   const { user } = useSelector((store) => store.auth);
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     if (!user) {
+      toast.error("Please login to continue");
       navigate("/login");
+      return;
     }
-  }, [user, navigate]); // <-- Add user and navigate to dependency array
+    setIsAuthenticated(true);
+  }, [user, navigate]);
 
-  return <>{children}</>;
+  // Only render children if user is authenticated
+  return isAuthenticated ? children : null;
 };
 
 export default ProtectedRoutes;
@@ -28,16 +33,14 @@ export default ProtectedRoutes;
 //         if(!user){
 //             navigate("/login")
 //         }
-     
 
 //     },[])
 //   return (
 //     <>
 //     {children}
-  
 
 //     </>
-  
+
 //   )
 // }
 
